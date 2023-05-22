@@ -67,26 +67,12 @@ export default {
 	},
 	methods: {
 		getCategory() {
-			// uni.request({
-			//     url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
-			//     data: {
-			//         text: 'uni.request'
-			//     },
-			//     header: {
-			//         'custom-header': 'hello' //自定义请求头信息
-			//     },
-			//     success: (res) => {
-			//         console.log(res.data);
-			//         this.text = 'request success';
-			//     }
-			// });
-			
-			this.$http('category.detail', {
-				id: this.categoryStyleId
-			}).then(res => {
-				if (res.code === 1) {
-					this.categoryData = res.data.children;
-				}
+			uni.request({
+			    url: 'http://121.41.36.138:8000/prod-api/market/category/list?level=1', //仅为示例，并非真实接口地址。
+			    
+			    success: (res) => {
+			        this.categoryData = res.rows;
+			    }
 			});
 		},
 		onType(id) {
