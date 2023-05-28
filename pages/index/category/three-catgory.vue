@@ -31,11 +31,11 @@
 						</view>
 
 						<!-- 缺省页 -->
-						<shopro-empty
+						<!-- <shopro-empty
 							v-show="!categoryData[listId].children.length"
 							:image="$IMG_URL + '/imgs/empty/empty_goods.png'"
 							tipText="暂无该商品，还有更多好货等着你噢~"
-						></shopro-empty>
+						></shopro-empty> -->
 						<view class="hack-tabbar"></view>
 					</view>
 				</scroll-view>
@@ -68,10 +68,10 @@ export default {
 	methods: {
 		getCategory() {
 			uni.request({
-			    url: 'http://121.41.36.138:8000/prod-api/market/category/list?level=1', //仅为示例，并非真实接口地址。
+			    url: 'http://121.41.36.138:8000/prod-api/market/category/listAll', //仅为示例，并非真实接口地址。
 			    
 			    success: (res) => {
-			        this.categoryData = res.rows;
+			        this.categoryData = res.data.rows;
 			    }
 			});
 		},
