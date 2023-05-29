@@ -24,7 +24,7 @@
 							</view>
 							<view class="item-box u-flex">
 								<view class="u-flex-col goods-item" @tap="jump('/pages/goods/list', { id: mlist.id })" v-for="(mlist, index2) in list.children" :key="index2">
-									<image class="item-img" lazy-load :src="mlist.image" mode="aspectFill"></image>
+									<image class="item-img" lazy-load :src="mlist.img" mode="aspectFill"></image>
 									<view class="item-title u-ellipsis-1 ">{{ mlist.name }}</view>
 								</view>
 							</view>
