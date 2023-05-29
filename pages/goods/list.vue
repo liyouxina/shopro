@@ -8,8 +8,6 @@
 					<u-search placeholder="请输入关键字" @change="onSearch" @search="onSearch" @clear="clearSearch" v-model="searchVal" :showAction="false" height="60"></u-search>
 				</view>
 			</shopro-navbar>
-			<!-- 筛选栏 -->
-			<sh-filter @change="onFilter"></sh-filter>
 		</view>
 
 		<view class="u-waterfall u-p-16" v-if="!isEmpty">
